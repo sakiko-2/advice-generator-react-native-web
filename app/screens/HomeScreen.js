@@ -8,9 +8,10 @@ function useFetch() {
   const [data, setData] = useState();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState();
+  const [active, setActive] = useState(false);
 
   useEffect(() => {
-    fetchData()
+    fetchData();
   }, []);
 
   function fetchData() {
@@ -18,14 +19,20 @@ function useFetch() {
       .then((response) => response.json())
       .then((data) => setData(data))
       .then(() => setLoading(false))
-      .catch(error => setError(error))
+      .then(() => setActive(false))
+      .catch(error => setError(error));
   }
 
-  return { data, loading, error, fetchData };
+  function handlePress() {
+    setActive(true);
+    fetchData();
+  }
+
+  return { data, loading, active, error, handlePress };
 }
 
 export default function HomeScreen() {
-  const { data, loading, error, fetchData } = useFetch();
+  const { data, loading, active, error, handlePress } = useFetch();
 
   if (loading) return <Text>loading...</Text>;
 
@@ -38,7 +45,7 @@ export default function HomeScreen() {
   return (
     <View style={styles.container}>
       <Card id={id} text={advice} />
-      <Button onPress={fetchData}/>
+      <Button active={active} onPress={handlePress}/>
     </View>
   );
 }

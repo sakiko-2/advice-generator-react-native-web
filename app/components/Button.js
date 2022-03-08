@@ -3,28 +3,35 @@ import {
   TouchableOpacity,
   View 
 } from 'react-native';
+import { Shadow } from 'react-native-shadow-2';
 import DiceIcon from './DiceIcon';
 
-const Button = ({ onPress }) => (
-  <View style={styles.container}>
-    <TouchableOpacity onPress={onPress}>
+const Button = ({ onPress, active }) => (
+  <TouchableOpacity onPress={onPress} style={styles.container}>
+    <Shadow
+      distance={active ? 24 : 0}
+      startColor={"hsla(150, 100%, 50%, .5)"}
+      endColor={"hsla(0, 0%, 0%, .1)"}
+    >
       <View style={styles.button}>
-        <DiceIcon/>
+        <DiceIcon />
       </View>
-    </TouchableOpacity>
-  </View>
+    </Shadow>
+  </TouchableOpacity>
 );
 
 const styles = StyleSheet.create({
+  container: {
+    bottom: 32
+  },
   button: {
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'hsl(150, 100%, 66%)',
     borderRadius: 50,
     width: 64,
-    height: 64,
-    marginTop: -32
+    height: 64
   }
-})
+});
 
 export default Button;
