@@ -12,7 +12,7 @@ const Card = ({ id, text }) => {
   return (
     <View style={window.width >= 500 ? styles.container : styles.containerMobile}>
       <Text style={styles.title}>ADVICE #{id}</Text>
-      <Text style={styles.text}>{text}</Text>
+      <Text style={styles.text}>“{text}”</Text>
       <Divider />
     </View>
   );
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     maxWidth: '92%',
     marginHorizontal: 10,
     paddingHorizontal: 16,
-    paddingVertical: 52,
+    paddingVertical: 52
   },
   title: {
     color: 'hsl(150, 100%, 66%)',
@@ -49,9 +49,9 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontFamily: 'Manrope_800ExtraBold',
     fontSize: 28,
-    marginVertical: 28,
-    textAlign: 'center'
+    textAlign: 'center',
+    marginVertical: 28
   }
-})
+});
 
 export default Card;
