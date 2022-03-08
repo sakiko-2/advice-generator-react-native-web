@@ -5,19 +5,15 @@ import {
 } from 'react-native';
 import DiceIcon from './DiceIcon';
 
-const Button = () => {
-  const onPress = () => {};
-
-  return (
-    <View style={styles.container}>
-      <TouchableOpacity onPress={onPress}>
-        <View style={styles.button}>
-          <DiceIcon/>
-        </View>
-      </TouchableOpacity>
-    </View>
-  );
-};
+const Button = ({ onPress }) => (
+  <View style={styles.container}>
+    <TouchableOpacity onPress={onPress}>
+      <View style={styles.button}>
+        <DiceIcon/>
+      </View>
+    </TouchableOpacity>
+  </View>
+);
 
 const styles = StyleSheet.create({
   button: {

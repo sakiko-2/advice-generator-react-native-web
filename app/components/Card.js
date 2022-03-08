@@ -6,15 +6,13 @@ import {
 } from 'react-native';
 import Divider from './Divider';
 
-const Card = () => {
+const Card = ({ id, text }) => {
   const window = useWindowDimensions();
-  const adviceTitle = 'ADVICE #117';
-  const adviceText = `It is easy to sit up and take notice, what's difficult is getting up and taking action.`
 
   return (
     <View style={window.width >= 500 ? styles.container : styles.containerMobile}>
-      <Text style={styles.title}>{adviceTitle}</Text>
-      <Text style={styles.text}>{`"${adviceText}"`}</Text>
+      <Text style={styles.title}>ADVICE #{id}</Text>
+      <Text style={styles.text}>{text}</Text>
       <Divider />
     </View>
   );

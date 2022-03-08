@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 import Divider from '../../assets/pattern-divider-mobile.svg';
 
 export default () => 
-  <Divider style={styles.divider}/>
+  <Divider style={styles.divider} alt="Divider"/>
 
 const styles = StyleSheet.create({
   divider: {

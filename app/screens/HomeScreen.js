@@ -1,13 +1,47 @@
+import { useEffect, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Button from '../components/Button';
 import Card from '../components/Card';
 
-const HomeScreen = () => (
-  <View style={styles.container}>
-    <Card />
-    <Button />
-  </View>
-);
+
+function useFetch() {
+  const [data, setData] = useState();
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState();
+
+  useEffect(() => {
+    fetchData()
+  }, []);
+
+  function fetchData() {
+    fetch('https://api.adviceslip.com/advice')
+      .then((response) => response.json())
+      .then((data) => setData(data))
+      .then(() => setLoading(false))
+      .catch(error => setError(error))
+  }
+
+  return { data, loading, error, fetchData };
+}
+
+export default function HomeScreen() {
+  const { data, loading, error, fetchData } = useFetch();
+
+  if (loading) return <Text>loading...</Text>;
+
+  if (error) {
+    return <Text>{JSON.stringify(error, null, 2)}</Text>
+  }
+
+  const { id, advice } = data.slip;
+
+  return (
+    <View style={styles.container}>
+      <Card id={id} text={advice} />
+      <Button onPress={fetchData}/>
+    </View>
+  );
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -18,5 +52,3 @@ const styles = StyleSheet.create({
     width: '100%'
   }
 });
-
-export default HomeScreen;

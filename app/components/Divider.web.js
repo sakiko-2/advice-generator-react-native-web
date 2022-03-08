@@ -9,16 +9,15 @@ export default () => {
 
   return (
     <Image
-      source = {
-        window.width >= 375 ?
-        require('../../assets/pattern-divider-desktop.svg') :
-        require('../../assets/pattern-divider-mobile.svg')
+      source={
+        window.width >= 375
+          ? require('../../assets/pattern-divider-desktop.svg')
+          : require('../../assets/pattern-divider-mobile.svg')
       }
-      style = {
-        styles.divider
-      } 
+      style={styles.divider}
+      alt="Divider"
     />
-   )
+  );
 }
 
 const styles = StyleSheet.create({
