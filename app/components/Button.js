@@ -9,9 +9,9 @@ import DiceIcon from './DiceIcon';
 const Button = ({ onPress, active }) => (
   <TouchableOpacity onPress={onPress} style={styles.container}>
     <Shadow
-      distance={active ? 24 : 0}
-      startColor={"hsla(150, 100%, 50%, .5)"}
-      endColor={"hsla(0, 0%, 0%, .1)"}
+      distance={active ? 20 : 0}
+      startColor={'hsla(150, 100%, 50%, .25)'}
+      endColor={'hsla(217, 19%, 0%, .1)'}
     >
       <View style={styles.button}>
         <DiceIcon />
