@@ -1,6 +1,20 @@
-### Advice Generator - React Native for Web
+# Advice Generator - React Native for Web
 
-Built with
+## Screenshots
+<p>
+  <h3>Web</h3>
+  <img src="./screenshots/web.png" width="700" alt="web screenshot">
+</p>
+<br/>
+<p>
+  <h3>Mobile - iOS</h3>
+  <img src="./screenshots/ios.png" width="250" alt="mobile-ios screenshot" style="margin-right:1rem;">
+  <img src="./screenshots/ios-active.png" width="250" alt="mobile-ios screenshot">
+</p>
+<br/>
+
+## Built with
+
 - [Expo Cli](https://github.com/expo/expo-cli)
 - [React Native for Web](https://github.com/necolas/react-native-web)
 
