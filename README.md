@@ -8,8 +8,10 @@
 <br/>
 <p>
   <h3>Mobile - iOS</h3>
-  <img src="./screenshots/ios.png" width="250" alt="mobile-ios screenshot" style="margin-right:1rem;">
-  <img src="./screenshots/ios-active.png" width="250" alt="mobile-ios screenshot">
+  <span style="display:inline;">
+    <img src="./screenshots/ios.png" width="250" alt="mobile-ios screenshot">
+    <img src="./screenshots/ios-active.png" width="250" alt="mobile-ios screenshot">
+  </span>
 </p>
 <br/>
 
